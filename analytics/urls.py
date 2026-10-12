@@ -5,6 +5,9 @@ from django.urls import path
 from .views import AdminDashboardView, TeacherDashboardView, StudentDashboardView
 
 
+# All routes below are mounted under API_ORG_PREFIX ("api/organizations/")
+# by lms_core.urls. Note the admin route places the 'analytics/' segment
+# before <org_id>, while the teacher/student routes place it after.
 urlpatterns = [
     path(
         'analytics/<int:org_id>/daily-metrics/',
