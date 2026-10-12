@@ -35,6 +35,9 @@ xlrd>=2.0.1
 # Course.thumbnail and Organization.logo)
 Pillow>=11.0.0
 
+# PDF Generation (Certificates)
+xhtml2pdf>=0.2.17
+
 # HTTP
 requests>=2.33.1
 
