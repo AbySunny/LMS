@@ -4,11 +4,17 @@
 import { Star } from 'lucide-react'
 
 interface RatingInputProps {
+  /** Currently selected rating (1–`max`), or `null` when nothing is selected yet. */
   value: number | null
+  /** Called with the clicked star's rating. Not called when `readOnly` is set. */
   onChange?: (value: number) => void
+  /** Number of stars to render. Defaults to 5. */
   max?: number
+  /** Display-only mode: disables the buttons and drops the radio roles. */
   readOnly?: boolean
+  /** Star icon size — `sm` for dense lists/tables, `md` for forms. */
   size?: 'sm' | 'md'
+  /** Accessible name for the radiogroup, e.g. the question text. */
   'aria-label'?: string
 }
 
@@ -25,6 +31,7 @@ export default function RatingInput({
   return (
     <div className="flex items-center gap-1" role={readOnly ? undefined : 'radiogroup'} {...rest}>
       {Array.from({ length: max }, (_, i) => i + 1).map((n) => {
+        // Fill every star up to and including the selected one, so the bar reads as a level.
         const filled = value != null && n <= value
         return (
           <button
