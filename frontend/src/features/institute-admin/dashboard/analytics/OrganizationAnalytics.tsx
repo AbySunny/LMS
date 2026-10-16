@@ -91,7 +91,7 @@ export default function OrganizationAnalytics({ orgId }: OrganizationAnalyticsPr
         >
           <BarChart
             data={studentsPerBatch}
-            color="#3b82f6"
+            color={paletteColor(0)}
             emptyText="No students enrolled yet."
           />
         </ChartCard>
@@ -123,7 +123,7 @@ export default function OrganizationAnalytics({ orgId }: OrganizationAnalyticsPr
         >
           <BarChart
             data={coursesPerBatch}
-            color="#14b8a6"
+            color={paletteColor(2)}
             emptyText="No courses assigned to batches yet."
           />
         </ChartCard>

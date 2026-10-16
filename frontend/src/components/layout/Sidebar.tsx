@@ -4,7 +4,8 @@
 import type { ElementType } from 'react'
 import { NavLink } from 'react-router-dom'
 import { ChevronLeft } from 'lucide-react'
-import logo from '@/assets/pws_logo_new_text.png'
+import logo from '@/assets/Vector.svg'
+import BrandLogo from '@/components/ui/BrandLogo'
 import { useTenant } from '@/context/TenantContext'
 
 export interface SidebarNavItem {
@@ -86,8 +87,7 @@ function NavGroup({ label, items, basePath, collapsed }: Readonly<{ label: strin
 
 export default function Sidebar({ basePath, navItems, collapsed, groups, settingsItems, settingsLabel, onToggle, hideLogo, topLabel }: Readonly<SidebarProps>) {
   const { tenant } = useTenant()
-  const defaultLogo = collapsed ? '/just-logo.png' : logo
-  const logoSrc = tenant?.logo_url ? tenant.logo_url : defaultLogo
+  const defaultLogo = logo
 
   return (
     <aside
@@ -118,16 +118,20 @@ export default function Sidebar({ basePath, navItems, collapsed, groups, setting
         </div>
       ) : (
         <div className="p-4 border-b border-slate-100 flex justify-center items-center overflow-hidden h-16">
-          <img
-            src={logoSrc}
-            alt={tenant?.name ?? 'LMS'}
-            onError={(e) => {
-              if (e.currentTarget.src !== defaultLogo) {
-                e.currentTarget.src = defaultLogo
-              }
-            }}
-            className={`object-contain transition-all duration-300 ${collapsed ? 'h-8 w-8' : 'h-10'}`}
-          />
+          {tenant?.logo_url ? (
+            <img
+              src={tenant.logo_url}
+              alt={tenant.name ?? 'Organization logo'}
+              onError={(e) => {
+                if (e.currentTarget.src !== defaultLogo) {
+                  e.currentTarget.src = defaultLogo
+                }
+              }}
+              className={`object-contain transition-all duration-300 ${collapsed ? 'h-8 w-8' : 'h-10'}`}
+            />
+          ) : (
+            <BrandLogo size={collapsed ? 'sm' : 'md'} iconOnly={collapsed} />
+          )}
         </div>
       )}
       <nav className="flex-1 p-3 space-y-0.5 overflow-y-auto">

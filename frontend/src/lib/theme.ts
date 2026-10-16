@@ -24,8 +24,8 @@ export interface AppTheme {
 
 /** Base palette — mirrors the `@theme` block in `src/index.css`. */
 export const DEFAULT_THEME = {
-  primary: '#0d9488', // brand-teal
-  accent: '#059669', // brand-green
+  primary: '#2f78bd', // brand-teal
+  accent: '#ce3c71', // brand-green
 } as const
 
 /** CSS variables each theme slot overrides. */

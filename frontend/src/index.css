@@ -5,16 +5,21 @@
 
 @import "tailwindcss";
 
-/* Refined green theme – professional, trustworthy, modern */
+/*
+ * Pastel theme – palette: #cdb4db #ffc8dd #ffafcc #bde0fe #a2d2ff.
+ * The pastels are too light for text or white-on-colour buttons, so the
+ * solid tokens are deeper shades of the same hues (≥4.5:1 against white,
+ * WCAG AA); the `-light` tokens use the pastels as-is.
+ */
 @theme {
-  --color-brand-green: #059669;
-  --color-brand-teal: #0d9488;
-  --color-brand-green-light: #d1fae5;
-  --color-brand-teal-light: #ccfbf1;
-  --color-brand-lavender: #8b5cf6;
+  --color-brand-green: #ce3c71;       /* accent – deep #ffafcc */
+  --color-brand-teal: #2f78bd;        /* primary – deep #a2d2ff */
+  --color-brand-green-light: #ffc8dd;
+  --color-brand-teal-light: #bde0fe;
+  --color-brand-lavender: #9a58c0;    /* deep #cdb4db */
   --color-brand-orange: #ea580c;
-  --color-brand-blue: #2563eb;
-  --color-brand-turquoise: #0d9488;
+  --color-brand-blue: #255c8b;        /* deep #bde0fe */
+  --color-brand-turquoise: #2f78bd;
 }
 
 /* Hide browser-native password reveal buttons (Edge/IE/Chrome) */

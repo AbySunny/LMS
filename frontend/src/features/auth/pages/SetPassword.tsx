@@ -4,7 +4,7 @@
 import { useState } from 'react'
 import { useSearchParams, Link, useNavigate } from 'react-router-dom'
 import BackButton from '@/components/ui/BackButton'
-import logo from '@/assets/pws_logo_new_text.png'
+import BrandLogo from '@/components/ui/BrandLogo'
 import { acceptInviteApi } from '@/lib/api/auth'
 import { showToast } from '@/lib/toastApi'
 import { Eye, EyeOff } from 'lucide-react'
@@ -65,7 +65,7 @@ export default function SetPassword() {
       <div className="min-h-full flex items-center justify-center bg-slate-50 px-4">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-200 text-center">
           <div className="flex justify-center mb-4">
-            <img src={logo} alt="Logo" className="h-10 object-contain" />
+            <BrandLogo />
           </div>
           <h1 className="text-xl font-bold text-slate-800 mb-2">Invalid or expired link</h1>
           <p className="text-slate-600 text-sm mb-6">
@@ -83,7 +83,7 @@ export default function SetPassword() {
       <div className="min-h-full flex items-center justify-center bg-slate-50 px-4">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-200 text-center">
           <div className="flex justify-center mb-4">
-            <img src={logo} alt="Logo" className="h-10 object-contain" />
+            <BrandLogo />
           </div>
           <h1 className="text-xl font-bold text-slate-800 mb-2">Password set successfully</h1>
           <p className="text-slate-600 text-sm mb-6">
@@ -104,7 +104,7 @@ export default function SetPassword() {
     <div className="min-h-full flex items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
         <div className="flex justify-center mb-6">
-          <img src={logo} alt="Logo" className="h-10 object-contain" />
+          <BrandLogo />
         </div>
         <h1 className="text-2xl font-bold text-slate-800 text-center mb-2">Set your password</h1>
         <p className="text-slate-600 text-sm text-center mb-6">

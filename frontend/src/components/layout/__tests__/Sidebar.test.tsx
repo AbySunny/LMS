@@ -33,7 +33,7 @@ describe('Sidebar', () => {
 
   it('renders default logo when tenant has no custom logo', () => {
     renderSidebar()
-    const img = screen.getByAltText('LMS')
+    const img = screen.getByAltText('TutorLoom')
     expect(img).toBeInTheDocument()
     expect(img.getAttribute('src')).toBeTruthy()
   })

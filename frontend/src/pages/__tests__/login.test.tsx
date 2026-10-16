@@ -6,7 +6,7 @@ import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/re
 import { MemoryRouter } from 'react-router-dom'
 import type { LoginResponse } from '@/lib/api/auth'
 
-vi.mock('@/assets/pws_logo_new_text.png', () => ({ default: 'logo' }))
+vi.mock('@/assets/Vector.svg', () => ({ default: 'logo' }))
 
 vi.mock('@/lib/constants', () => ({
   ROLE_PATHS: {

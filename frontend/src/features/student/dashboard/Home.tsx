@@ -30,8 +30,8 @@ import DonutChart from '@/components/ui/charts/DonutChart'
 import GaugeChart from '@/components/ui/charts/GaugeChart'
 
 const STATUS_COLORS = {
-  completed: '#22c55e',
-  inProgress: '#14b8a6',
+  completed: '#2f78bd',
+  inProgress: '#b47cd3',
   notStarted: '#cbd5e1',
 } as const
 

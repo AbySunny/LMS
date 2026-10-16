@@ -69,7 +69,7 @@ vi.mock('@/components/ui/BackButton', () => ({
   default: ({ label }: { label: string }) => <span data-testid="back-button">{label}</span>,
 }))
 
-vi.mock('@/assets/pws_logo_new_text.png', () => ({ default: 'logo.png' }))
+vi.mock('@/assets/Vector.svg', () => ({ default: 'logo.png' }))
 
 import * as authApi from '@/lib/api/auth'
 import * as toastApi from '@/lib/toastApi'

@@ -20,7 +20,7 @@ interface BarChartProps {
   emptyText?: string
 }
 
-const DEFAULT_COLOR = '#14b8a6'
+const DEFAULT_COLOR = '#2f78bd'
 
 /**
  * Dependency-free horizontal bar chart. Reusable for any labelled numeric

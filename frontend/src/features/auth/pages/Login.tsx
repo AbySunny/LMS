@@ -12,7 +12,7 @@ import {
   BookOpen,
   ArrowLeft,
 } from "lucide-react";
-import logo from "@/assets/pws_logo_new_text.png";
+import BrandLogo, { APP_NAME } from "@/components/ui/BrandLogo";
 import { useTenant } from "@/context/TenantContext";
 import {
   setStoredOrganizations,
@@ -32,8 +32,7 @@ import ChoiceCard from "@/components/ui/ChoiceCard";
 
 export default function Login() {
   const { tenant } = useTenant();
-  const logoSrc = tenant?.logo_url ?? logo;
-  const orgName = tenant?.name ?? "LMS";
+  const orgName = tenant?.name ?? APP_NAME;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -222,7 +221,11 @@ export default function Login() {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
           <div className="flex flex-col items-center mb-6">
-            <img src={logoSrc} alt={orgName} className="h-14 object-contain" />
+            {tenant?.logo_url ? (
+              <img src={tenant.logo_url} alt={orgName} className="h-14 object-contain" />
+            ) : (
+              <BrandLogo size="lg" />
+            )}
             {tenant && (
               <p className="text-sm font-semibold text-slate-600 mt-2">
                 {orgName}
