@@ -29,6 +29,7 @@ path = [
     "frontend/public/just-logo.png",
     "frontend/public/logo.png",
     "frontend/src/assets/pws_logo_new_text.png",
+    "frontend/src/assets/Vector.svg",
     "student_mobile_app/assets/app_logo.png",
     "student_mobile_app/assets/app_logo_transparent.png",
     "student_mobile_app/android/app/src/main/res/mipmap-*/ic_launcher.png",
